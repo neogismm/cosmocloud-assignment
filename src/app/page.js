@@ -1,37 +1,9 @@
 import EmployeeList from "@/components/employee-listing";
+import getEmployees from "@/util/getEmployees";
 
-async function handler() {
-  const params = new URLSearchParams({
-    limit: 10,
-    offset: 0,
-  });
-
+export default async function Page() {
   try {
-    const response = await fetch(
-      `${process.env.NEXT_PUBLIC_API_URL}/api/employees?${params.toString()}`,
-      {
-        method: "GET",
-        headers: {
-          projectid: process.env.NEXT_PUBLIC_COSMOCLOUD_PROJECT_ID,
-          environmentId: process.env.NEXT_PUBLIC_COSMOCLOUD_ENVIRONMENT_ID,
-        },
-      }
-    );
-
-    if (!response.ok) {
-      throw new Error("Network response was not ok");
-    }
-
-    const data = await response.json();
-    return data;
-  } catch (error) {
-    return error.json();
-  }
-}
-
-export default async function getEmployees() {
-  try {
-    const employees = await handler();
+    const employees = await getEmployees();
     const name = employees.data[0].name;
     const line1 = employees.data[0].address.line1;
     const city = employees.data[0].address.city;
@@ -48,7 +20,6 @@ export default async function getEmployees() {
       />
     );
   } catch (error) {
-    console.error("Failed to fetch employees:", error);
     return (
       <main>
         <p>Error fetching employees</p>
