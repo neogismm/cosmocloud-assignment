@@ -1,5 +1,7 @@
 'use client'
 
+import React from "react"
+
 export default function Header() {
   return (
     <header className="border border-white/50 rounded-3xl mx-auto max-w-7xl p-6 lg:px-8 mt-4">
