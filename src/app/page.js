@@ -1,4 +1,4 @@
-import EmployeeDetails from "@/components/employee-listing";
+import EmployeeList from "@/components/employee-listing";
 
 async function handler() {
   const params = new URLSearchParams({
@@ -39,7 +39,7 @@ export default async function getEmployees() {
     const zipCode = employees.data[0].address.zip_code;
 
     return (
-      <EmployeeDetails
+      <EmployeeList
         name={name}
         line1={line1}
         city={city}

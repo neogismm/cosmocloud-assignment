@@ -1,6 +1,6 @@
 import React from 'react';
 
-const EmployeeDetails = ({ name, line1, city, country, zipCode }) => {
+const EmployeeList = ({ name, line1, city, country, zipCode }) => {
   return (
     <div>
       <h1>{name}</h1>
@@ -12,4 +12,4 @@ const EmployeeDetails = ({ name, line1, city, country, zipCode }) => {
   );
 };
 
-export default EmployeeDetails;
+export default EmployeeList;
