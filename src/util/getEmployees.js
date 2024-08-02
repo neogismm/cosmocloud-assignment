@@ -1,3 +1,5 @@
+import { unstable_noStore } from "next/cache";
+
 async function handler() {
     const params = new URLSearchParams({
       limit: 10,
@@ -5,6 +7,7 @@ async function handler() {
     });
   
     try {
+      unstable_noStore();
       const response = await fetch(
         `${process.env.NEXT_PUBLIC_API_URL}/api/employees?${params.toString()}`,
         {
