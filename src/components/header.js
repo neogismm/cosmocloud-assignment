@@ -7,7 +7,7 @@ export default function Header() {
     <header className="border border-white/50 rounded-3xl mx-auto max-w-7xl p-6 lg:px-8 mt-4">
       <nav aria-label="Global" className="flex items-center justify-between">
         <div className="flex lg:flex-1">
-          <a href="#" className="-m-1.5 p-1.5">
+          <a href="/" className="-m-1.5 p-1.5">
             <span className="sr-only">Your Company</span>
             <img alt="Logo" src="https://cosmocloud.io/_next/static/media/CosmocloudLogo.6ff13a81.svg" className="h-7 w-auto" />
           </a>
