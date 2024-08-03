@@ -1,18 +1,34 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import getEmployeeById from "@/util/getEmployeeById";
 import EmployeeDetailsForm from "@/components/employee-details";
 import deleteEmployeeById from "@/util/deleteEmployeeById";
 import { useRouter } from "next/navigation";
-import { revalidatePath } from "next/cache";
 
-async function EmployeeDetails({ params }) {
+function EmployeeDetails({ params }) {
   const router = useRouter();
+  const [employee, setEmployee] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchEmployee = async () => {
+      try {
+        const data = await getEmployeeById(params.id);
+        setEmployee(data);
+      } catch (error) {
+        console.error("Failed to fetch employee:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchEmployee();
+  }, [params.id]);
+
   const handleEmployeeDelete = async (id) => {
     try {
       const res = await deleteEmployeeById(id);
-      // revalidatePath("/");
       alert(res.message);
     } catch (error) {
       console.error("Failed to delete employee:", error);
@@ -23,16 +39,19 @@ async function EmployeeDetails({ params }) {
     }
   };
 
-  const getEmployee = await getEmployeeById(params.id);
+  if (loading) {
+    return <p>Loading...</p>;
+  }
+
   return (
     <div className="p-8 mt-10">
       <div className="max-w-7xl mx-auto">
         <h1 className="text-3xl font-bold mb-8 mt-4 text-center">
           Employee Details
         </h1>
-        {getEmployee ? (
+        {employee ? (
           <>
-            <EmployeeDetailsForm employee={getEmployee} />
+            <EmployeeDetailsForm employee={employee} />
             <div className="flex justify-center mt-4">
               <button
                 onClick={() => handleEmployeeDelete(params.id)}
