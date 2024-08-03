@@ -9,8 +9,10 @@ export default async function Page() {
     return (
       <div className="p-8 mt-10">
         <div className="max-w-7xl mx-auto relative">
-          <AddEmployeeButton />
-          <h1 className="text-3xl font-bold mb-8 mt-4">Employee List</h1>
+          <div className="flex items-center justify-between mb-8">
+            <h1 className="text-3xl font-bold">Employee List</h1>
+            <AddEmployeeButton />
+          </div>
           <EmployeeList employees={employees.data} />
         </div>
       </div>

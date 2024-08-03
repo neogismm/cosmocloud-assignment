@@ -1,7 +1,7 @@
 import addNewEmployee from "@/util/addNewEmployee";
 import React, { useState } from "react";
 
-const AddEmployeeForm = () => {
+const AddEmployeeForm = ({ onClose }) => {
   const [contactMethod, setContactMethod] = useState("");
 
   const handleSubmit = async (event) => {
@@ -15,7 +15,7 @@ const AddEmployeeForm = () => {
         country: event.target.country.value,
         zip_code: event.target.zip_code.value,
       },
-      contact_methods: {}, // Initialize as an object
+      contact_methods: {},
     };
 
     if (contactMethod === "EMAIL") {
@@ -33,6 +33,7 @@ const AddEmployeeForm = () => {
     try {
       const result = await addNewEmployee(data);
       console.log("Employee added:", result);
+      onClose(); // Close the form after successful submission
     } catch (error) {
       console.error("Failed to add employee:", error);
     }
@@ -55,7 +56,6 @@ const AddEmployeeForm = () => {
           className="block w-full rounded-md border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
         />
       </div>
-
       <div className="mb-4">
         <label
           htmlFor="line1"
@@ -71,7 +71,6 @@ const AddEmployeeForm = () => {
           className="block w-full rounded-md border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
         />
       </div>
-
       <div className="mb-4">
         <label
           htmlFor="city"
@@ -87,7 +86,6 @@ const AddEmployeeForm = () => {
           className="block w-full rounded-md border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
         />
       </div>
-
       <div className="mb-4">
         <label
           htmlFor="country"
@@ -103,7 +101,6 @@ const AddEmployeeForm = () => {
           className="block w-full rounded-md border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
         />
       </div>
-
       <div className="mb-4">
         <label
           htmlFor="zip_code"
@@ -119,7 +116,6 @@ const AddEmployeeForm = () => {
           className="block w-full rounded-md border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
         />
       </div>
-
       <div className="mb-4">
         <label
           htmlFor="contact_method"
@@ -139,7 +135,6 @@ const AddEmployeeForm = () => {
           <option value="PHONE">Phone</option>
         </select>
       </div>
-
       {contactMethod === "EMAIL" && (
         <div className="mb-4">
           <label
@@ -157,7 +152,6 @@ const AddEmployeeForm = () => {
           />
         </div>
       )}
-
       {contactMethod === "PHONE" && (
         <div className="mb-4">
           <label
@@ -175,10 +169,9 @@ const AddEmployeeForm = () => {
           />
         </div>
       )}
-
       <button
         type="submit"
-        className=" mt-4 py-2 px-4 bg-indigo-600 text-white rounded-md"
+        className="mt-4 mb-4 py-2 px-4 bg-indigo-600 text-white rounded-md float-right"
       >
         Add
       </button>

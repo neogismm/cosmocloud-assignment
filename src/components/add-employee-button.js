@@ -18,7 +18,7 @@ export default function AddEmployeeButton() {
     <>
       <button
         onClick={handleButtonClick}
-        className="absolute top-0 right-0 bg-green-500 text-white py-2 px-2 rounded mt-4"
+        className=" top-0 right-0 bg-green-500 text-white py-2 px-2 rounded"
       >
         Add New Employee
       </button>

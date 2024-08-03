@@ -1,6 +1,12 @@
-import { Dialog, DialogBackdrop, DialogPanel, DialogTitle } from '@headlessui/react';
+import {
+  Dialog,
+  DialogBackdrop,
+  DialogPanel,
+  DialogTitle,
+} from "@headlessui/react";
 import React from "react";
-import AddEmployeeInput from './add-employee-input-field';
+import AddEmployeeForm from "./add-employee-input-field";
+import CloseModalButton from "./close-modal-button";
 
 const AddEmployeeModal = ({ open, onClose }) => {
   return (
@@ -16,11 +22,19 @@ const AddEmployeeModal = ({ open, onClose }) => {
             transition
             className="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all data-[closed]:translate-y-4 data-[closed]:opacity-0 data-[enter]:duration-300 data-[leave]:duration-200 data-[enter]:ease-out data-[leave]:ease-in sm:my-8 sm:w-full sm:max-w-lg data-[closed]:sm:translate-y-0 data-[closed]:sm:scale-95"
           >
-            <DialogTitle as="h3" className="mt-4 text-lg text-center font-medium leading-6 text-gray-900">
-              Add a new employee
-            </DialogTitle>
+            <div className="flex justify-between items-center px-4 py-2">
+              <div className="flex-1 text-center">
+                <DialogTitle
+                  as="h3"
+                  className="text-lg font-medium leading-6 text-gray-900"
+                >
+                  Add a new employee
+                </DialogTitle>
+              </div>
+              <CloseModalButton onClose={onClose} />
+            </div>
             <div className="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
-              <AddEmployeeInput />
+              <AddEmployeeForm onClose={onClose}/>
             </div>
           </DialogPanel>
         </div>
