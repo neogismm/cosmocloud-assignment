@@ -29,7 +29,7 @@ async function handler() {
     // return data;
 
     // Using dummy response from response.json
-    const fileContents = fs.readFileSync('../response.json', 'utf8');
+    const fileContents = fs.readFileSync('/Users/neog/Desktop/cosmocloud-assignment/src/response.json', 'utf8');
     const data = JSON.parse(fileContents);
     return data;
   } catch (error) {
