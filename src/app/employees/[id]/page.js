@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import getEmployeeById from "@/util/getEmployeeById";
-import EmployeeDetailsForm from "@/components/employee-details";
+import EmployeeDetailsForm from "@/components/forms/employee-details-form";
 import deleteEmployeeById from "@/util/deleteEmployeeById";
 import { useRouter } from "next/navigation";
 import { ArrowUturnLeftIcon, TrashIcon } from "@heroicons/react/24/outline";

@@ -5,8 +5,8 @@ import {
   DialogTitle,
 } from "@headlessui/react";
 import React from "react";
-import AddEmployeeForm from "./add-employee-input-field";
-import CloseModalButton from "./close-modal-button";
+import AddEmployeeForm from "../add-employee-input-field";
+import CloseModalButton from "../buttons/close-modal-button";
 
 const AddEmployeeModal = ({ open, onClose }) => {
   return (
@@ -34,7 +34,7 @@ const AddEmployeeModal = ({ open, onClose }) => {
               <CloseModalButton onClose={onClose} />
             </div>
             <div className="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
-              <AddEmployeeForm onClose={onClose}/>
+              <AddEmployeeForm onClose={onClose} />
             </div>
           </DialogPanel>
         </div>

@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import AddEmployeeModal from "@/components/add-employee-modal";
+import AddEmployeeModal from "@/components/modals/add-employee-modal";
 
 export default function AddEmployeeButton() {
   const [isModalOpen, setIsModalOpen] = useState(false);

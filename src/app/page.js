@@ -1,7 +1,7 @@
 import React from "react";
 import EmployeeList from "@/components/employee-listing";
 import getEmployees from "@/util/getEmployees";
-import AddEmployeeButton from "@/components/add-employee-button";
+import AddEmployeeButton from "@/components/buttons/add-employee-button";
 
 export default async function Page() {
   try {
@@ -18,7 +18,10 @@ export default async function Page() {
             </div>
             <AddEmployeeButton />
           </div>
-          <EmployeeList employees={employees.data} employeeCount={employeeCount}/>
+          <EmployeeList
+            employees={employees.data}
+            employeeCount={employeeCount}
+          />
         </div>
       </div>
     );

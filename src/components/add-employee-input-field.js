@@ -171,7 +171,7 @@ const AddEmployeeForm = ({ onClose }) => {
       )}
       <button
         type="submit"
-        className="mt-4 mb-4 py-2 px-4 bg-indigo-600 text-white rounded-md float-right"
+        className="mt-4 mb-4 py-2 px-4 bg-blue-600 text-white rounded-md float-right"
       >
         Add
       </button>
