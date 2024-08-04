@@ -57,7 +57,7 @@ const AddEmployeeForm = ({ onClose, setAddEmployeeStatus }) => {
           id="name"
           name="name"
           type="text"
-          placeholder="John Doe"
+          placeholder="Mihcael Scott"
           className="block w-full rounded-md border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
         />
       </div>
@@ -72,7 +72,7 @@ const AddEmployeeForm = ({ onClose, setAddEmployeeStatus }) => {
           id="line1"
           name="line1"
           type="text"
-          placeholder="123 Main St"
+          placeholder="1725 Slough Avenue"
           className="block w-full rounded-md border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
         />
       </div>
@@ -87,7 +87,7 @@ const AddEmployeeForm = ({ onClose, setAddEmployeeStatus }) => {
           id="city"
           name="city"
           type="text"
-          placeholder="New York"
+          placeholder="Scranton"
           className="block w-full rounded-md border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
         />
       </div>
@@ -117,7 +117,7 @@ const AddEmployeeForm = ({ onClose, setAddEmployeeStatus }) => {
           id="zip_code"
           name="zip_code"
           type="text"
-          placeholder="10001"
+          placeholder="18505"
           className="block w-full rounded-md border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
         />
       </div>
@@ -152,7 +152,7 @@ const AddEmployeeForm = ({ onClose, setAddEmployeeStatus }) => {
             id="email"
             name="email"
             type="email"
-            placeholder="johndoe@gmail.com"
+            placeholder="scottstots@gmail.com"
             className="block w-full rounded-md border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
           />
         </div>
@@ -169,7 +169,7 @@ const AddEmployeeForm = ({ onClose, setAddEmployeeStatus }) => {
             id="phone"
             name="phone"
             type="tel"
-            placeholder="(123) 456-7890"
+            placeholder="(123)456-7890"
             className="block w-full rounded-md border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
           />
         </div>
