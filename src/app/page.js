@@ -18,8 +18,10 @@ export default function Page() {
 
   useEffect(() => {
     async function fetchEmployees() {
+      console.log("Fetching employees...");
       try {
         const employeesData = await getEmployees();
+        console.log("Employees data fetched");
         setEmployees(employeesData.data);
         setEmployeeCount(employeesData.page.total);
       } catch (error) {
