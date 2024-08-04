@@ -5,6 +5,7 @@ import EmployeeList from "@/components/employee-listing";
 import getEmployees from "@/util/getEmployees";
 import AddEmployeeButton from "@/components/buttons/add-employee-button";
 import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 import { useRouter } from "next/navigation";
 
 export default function Page() {
@@ -29,12 +30,12 @@ export default function Page() {
 
   useEffect(() => {
     if (addEmployeeStatus === "success") {
-      toast.success(`New employee added`);
+      toast.success(`New employee added. Refresh to see changes`);
       router.refresh();
     } else if (addEmployeeStatus === "error") {
       toast.error("Failed to add employee");
     }
-  }, [addEmployeeStatus, router]);
+  }, [addEmployeeStatus]);
 
   return (
     <div className="p-8 mt-10">
