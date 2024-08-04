@@ -5,10 +5,10 @@ import React, { useState } from "react";
 const EmployeeList = ({ employees, employeeCount }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const employeesPerPage = 6;
-
+  const reversedEmployees = [...employees].reverse(); // last entry will be at top of list
   const indexOfLastEmployee = currentPage * employeesPerPage;
   const indexOfFirstEmployee = indexOfLastEmployee - employeesPerPage;
-  const currentEmployees = employees.slice(
+  const currentEmployees = reversedEmployees.slice(
     indexOfFirstEmployee,
     indexOfLastEmployee
   );
@@ -26,7 +26,7 @@ const EmployeeList = ({ employees, employeeCount }) => {
   };
 
   const router = useRouter();
-  const handleEmployeeButtonClick = (id) => {
+  const handleEmployeeCardClick = (id) => {
     router.push(`/employees/${id}`);
   };
 
@@ -75,7 +75,7 @@ const EmployeeList = ({ employees, employeeCount }) => {
                 <li
                   key={employee._id}
                   className="grid grid-cols-5 gap-4 p-4 mb-4 border-b border-gray-200 hover:bg-gray-800 cursor-pointer"
-                  onClick={() => handleEmployeeButtonClick(employee._id)}
+                  onClick={() => handleEmployeeCardClick(employee._id)}
                 >
                   <span className="text-lg font-semibold">{employee.name}</span>
                   <span className="text-gray-500 text-center">

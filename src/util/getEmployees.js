@@ -2,7 +2,7 @@ import { unstable_noStore } from "next/cache";
 
 async function handler() {
   const params = new URLSearchParams({
-    limit: 10,
+    limit: 100000,
     offset: 0,
   });
 

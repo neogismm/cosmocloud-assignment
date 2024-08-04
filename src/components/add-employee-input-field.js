@@ -1,8 +1,10 @@
 import addNewEmployee from "@/util/addNewEmployee";
+import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 
-const AddEmployeeForm = ({ onClose }) => {
+const AddEmployeeForm = ({ onClose, setAddEmployeeStatus }) => {
   const [contactMethod, setContactMethod] = useState("");
+  const router = useRouter();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -33,9 +35,12 @@ const AddEmployeeForm = ({ onClose }) => {
     try {
       const result = await addNewEmployee(data);
       console.log("Employee added:", result);
-      onClose(); // Close the form after successful submission
+      setAddEmployeeStatus("success"); 
+      onClose(); 
+      router.refresh();
     } catch (error) {
       console.error("Failed to add employee:", error);
+      setAddEmployeeStatus("error");
     }
   };
 

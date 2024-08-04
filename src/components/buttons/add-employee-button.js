@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import AddEmployeeModal from "@/components/modals/add-employee-modal";
 
-export default function AddEmployeeButton() {
+export default function AddEmployeeButton({setAddEmployeeStatus}) {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleButtonClick = () => {
@@ -23,7 +23,7 @@ export default function AddEmployeeButton() {
         Add New Employee
       </button>
       {isModalOpen && (
-        <AddEmployeeModal open={isModalOpen} onClose={handleCloseModal} />
+        <AddEmployeeModal open={isModalOpen} onClose={handleCloseModal} setAddEmployeeStatus={setAddEmployeeStatus} />
       )}
     </>
   );

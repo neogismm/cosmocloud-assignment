@@ -8,7 +8,7 @@ import React from "react";
 import AddEmployeeForm from "../add-employee-input-field";
 import CloseModalButton from "../buttons/close-modal-button";
 
-const AddEmployeeModal = ({ open, onClose }) => {
+const AddEmployeeModal = ({ open, onClose, setAddEmployeeStatus }) => {
   return (
     <Dialog open={open} onClose={onClose} className="relative z-10">
       <DialogBackdrop
@@ -34,7 +34,7 @@ const AddEmployeeModal = ({ open, onClose }) => {
               <CloseModalButton onClose={onClose} />
             </div>
             <div className="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
-              <AddEmployeeForm onClose={onClose} />
+              <AddEmployeeForm onClose={onClose} setAddEmployeeStatus={setAddEmployeeStatus}/>
             </div>
           </DialogPanel>
         </div>
