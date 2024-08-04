@@ -5,6 +5,7 @@ import getEmployeeById from "@/util/getEmployeeById";
 import EmployeeDetailsForm from "@/components/employee-details";
 import deleteEmployeeById from "@/util/deleteEmployeeById";
 import { useRouter } from "next/navigation";
+import { ArrowUturnLeftIcon, TrashIcon } from "@heroicons/react/24/outline";
 
 function EmployeeDetails({ params }) {
   const router = useRouter();
@@ -39,6 +40,10 @@ function EmployeeDetails({ params }) {
     }
   };
 
+  const handleGoBack = () => {
+    router.back();
+  };
+
   if (loading) {
     return <p>Loading...</p>;
   }
@@ -46,18 +51,27 @@ function EmployeeDetails({ params }) {
   return (
     <div className="p-8 mt-10">
       <div className="max-w-7xl mx-auto">
-        <h1 className="text-3xl font-bold mb-8 mt-4 text-center">
-          Employee Details
-        </h1>
+        <div className="flex justify-between items-center mb-8 mt-4">
+          <button
+            onClick={handleGoBack}
+            className="border border-white/40 rounded p-3"
+          >
+            <ArrowUturnLeftIcon className="size-6 text-white-500"/>
+          </button>
+          <h1 className="text-3xl font-bold flex-grow text-center">
+            <span>Employee Details</span>
+          </h1>
+          <div className="w-16"></div> 
+        </div>
         {employee ? (
           <>
             <EmployeeDetailsForm employee={employee} />
             <div className="flex justify-center mt-4">
               <button
                 onClick={() => handleEmployeeDelete(params.id)}
-                className="px-4 py-2 bg-red-500 text-white rounded"
+                className="px-10 py-2 bg-red-500 text-white rounded"
               >
-                Delete
+                <TrashIcon className="size-6"/>
               </button>
             </div>
           </>

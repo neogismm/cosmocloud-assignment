@@ -18,7 +18,7 @@ export default async function Page() {
             </div>
             <AddEmployeeButton />
           </div>
-          <EmployeeList employees={employees.data} />
+          <EmployeeList employees={employees.data} employeeCount={employeeCount}/>
         </div>
       </div>
     );
