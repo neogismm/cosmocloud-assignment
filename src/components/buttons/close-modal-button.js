@@ -1,8 +1,9 @@
 import React from "react";
 
-const CloseModalButton = ({onClose}) => {
+const CloseModalButton = ({ onClose }) => {
   return (
-    <button onClick={onClose}
+    <button
+      onClick={onClose}
       type="button"
       class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
     >

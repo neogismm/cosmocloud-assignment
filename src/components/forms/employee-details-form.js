@@ -5,9 +5,7 @@ function EmployeeDetailsForm({ employee }) {
     <div className="flex justify-center text-center">
       <div className="w-full max-w-md">
         <div className="mb-4 border border-white/40 p-4 rounded-3xl">
-          <label className="block text-left text-sm font-bold mb-2">
-            Name
-          </label>
+          <label className="block text-left text-sm font-bold mb-2">Name</label>
           <input
             type="text"
             value={employee.name}

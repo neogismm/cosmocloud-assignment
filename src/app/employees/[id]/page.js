@@ -56,12 +56,12 @@ function EmployeeDetails({ params }) {
             onClick={handleGoBack}
             className="border border-white/40 rounded p-3"
           >
-            <ArrowUturnLeftIcon className="size-6 text-white-500"/>
+            <ArrowUturnLeftIcon className="size-6 text-white-500" />
           </button>
           <h1 className="text-3xl font-bold flex-grow text-center">
             <span>Employee Details</span>
           </h1>
-          <div className="w-16"></div> 
+          <div className="w-16"></div>
         </div>
         {employee ? (
           <>
@@ -71,7 +71,7 @@ function EmployeeDetails({ params }) {
                 onClick={() => handleEmployeeDelete(params.id)}
                 className="px-10 py-2 bg-red-500 text-white rounded"
               >
-                <TrashIcon className="size-6"/>
+                <TrashIcon className="size-6" />
               </button>
             </div>
           </>
