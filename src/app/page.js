@@ -7,11 +7,13 @@ import AddEmployeeButton from "@/components/buttons/add-employee-button";
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import { useRouter } from "next/navigation";
+import EmployeeDetailsToggleButton from "@/components/buttons/employee-details-toggle-button";
 
 export default function Page() {
   const [employees, setEmployees] = useState([]);
   const [employeeCount, setEmployeeCount] = useState(0);
   const [addEmployeeStatus, setAddEmployeeStatus] = useState("");
+  const [showDetails, setShowDetails] = useState(false);
   const router = useRouter();
 
   useEffect(() => {
@@ -48,7 +50,10 @@ export default function Page() {
           </div>
           <AddEmployeeButton setAddEmployeeStatus={setAddEmployeeStatus} />
         </div>
-        <EmployeeList employees={employees} employeeCount={employeeCount} />
+        <div className="flex items-center justify-end ">
+          <EmployeeDetailsToggleButton showDetails={showDetails} setShowDetails={setShowDetails} />
+        </div>
+        <EmployeeList employees={employees} employeeCount={employeeCount} showDetails={showDetails} />
       </div>
     </div>
   );
